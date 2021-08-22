@@ -509,7 +509,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("📖 ᴘʟᴀʏʟɪsᴛ", callback_data="playlist"),
-                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/{UPDATES_CHANNEL}"),
+                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/chmoonbot"),
                 ],
                 [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="cls")],
             ]
@@ -555,7 +555,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("📖 ᴘʟᴀʏʟɪsᴛ", callback_data="playlist"),
-                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/{UPDATES_CHANNEL}"),
+                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/chmoonbot"),
                 ],
                 [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="cls")],
             ]
@@ -637,7 +637,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("📖 ᴘʟᴀʏʟɪsᴛ", callback_data="playlist"),
-                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/{UPDATES_CHANNEL}"),
+                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/chmoonbot"),
                 ],
                 [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="cls")],
             ]
@@ -735,7 +735,7 @@ async def lol_cb(b, cb):
             [
                 [
                     InlineKeyboardButton("📖 ᴘʟᴀʏʟɪsᴛ", callback_data="playlist"),
-                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/{UPDATES_CHANNEL}"),
+                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/chmoonbot"),
                 ],
                 [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="cls")],
             ]
