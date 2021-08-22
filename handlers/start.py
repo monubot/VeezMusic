@@ -63,12 +63,12 @@ async def start(client: Client, message: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await message.reply_text(
-        f"""✅ **bot is running**\n<b>💠 **uptime:**</b> `{uptime}`""",
+        f"""✅ **Bot is running**\n<b>💠 **uptime:**</b> `{uptime}`""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🌹 sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/chmongabut"
+                        "🌹 sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{UPDATES_CHANNEL}"
                     ),
                 ]
             ]
@@ -156,7 +156,7 @@ async def ping_pong(client: Client, message: Message):
     m_reply = await message.reply_text("pinging...")
     delta_ping = time() - start
     await m_reply.edit_text(
-        "🏓 `PONG!!`\n"
+        "🏓 `MOON PONG!!`\n"
         f"⚡️ `{delta_ping * 1000:.3f} ms`"
     )
 
