@@ -576,14 +576,15 @@ async def play(_, message: Message):
           await lel.edit("**please give a song name you want to play !**")
         # veez project
         try:
-            toxxt = "⚡ __choose a song to play:__\n\n"
+            toxxt = "⚡ __Choose a song to play:__\n\n"
             j = 0
             useer=user_name
             emojilist = ["1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣"]
             while j < 6:
                 toxxt += f"{emojilist[j]} [{results[j]['title'][:20]}](https://youtube.com{results[j]['url_suffix']})\n"
-                toxxt += f" ├ 💡 **Duration** - {results[j]['duration']}\n"
-                toxxt += f" └ ⚡ __Powered by {BOT_NAME} A.I__\n\n"
+                toxxt += f" ├• **Duration** - {results[j]['duration']}\n"
+                toxxt += f" ├• **Views** - {results[j]['views']}\n"
+                toxxt += f" └• __Powered by ᴍᴏᴏɴ ᴍᴜsɪᴄ__\n\n"
                 j += 1            
             keyboard = InlineKeyboardMarkup(
                 [
@@ -595,8 +596,6 @@ async def play(_, message: Message):
                     [
                         InlineKeyboardButton("4️⃣", callback_data=f'plll 3|{query}|{user_id}'),
                         InlineKeyboardButton("5️⃣", callback_data=f'plll 4|{query}|{user_id}'),
-                    ],
-                    [
                         InlineKeyboardButton("6️⃣", callback_data=f'plll 5|{query}|{user_id}'),
                     ],
                     [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="cls")],
