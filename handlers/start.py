@@ -40,30 +40,22 @@ async def start_(client: Client, message: Message):
 ❓ 𝗙𝗼𝗿 𝗶𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻 𝗮𝗯𝗼𝘂𝘁 𝗮𝗹𝗹 𝗳𝗲𝗮𝘁𝘂𝗿𝗲 𝗼𝗳 𝘁𝗵𝗶𝘀 𝗯𝗼𝘁, 𝗷𝘂𝘀𝘁 𝘁𝘆𝗽𝗲 /help
 </b>""",
         reply_markup=InlineKeyboardMarkup(
-            [ 
+            [
                 [
                     InlineKeyboardButton(
-                        "➕ Add me to your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                        "📚 Commands", url="https://telegra.ph/VEEZ-MUSIC-GUIDE-07-27")
                 ],[
                     InlineKeyboardButton(
-                         "📚 Commands", url="https://telegra.ph/VEEZ-MUSIC-GUIDE-07-27"
-                    ),
+                        "☀️ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"), 
                     InlineKeyboardButton(
-                        "💝 Donate", url=f"https://t.me/{OWNER_NAME}")
+                        "✨ ɢʀᴏᴜᴘs", url=f"https://t.me/{SUPPORT_GROUP}")
                 ],[
                     InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}"
-                    ),
-                    InlineKeyboardButton(
-                        "📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}")
+                        "⚡ ᴏᴡɴᴇʀ", url=f"https://t.me/mondisini")
                 ],[
                     InlineKeyboardButton(
-                        "🌐 Wiki's Page", url="https://github.com/levina-lab/veezmusic/wiki/Veez-Music-Wiki's")
-                ],[
-                    InlineKeyboardButton(
-                        "🧪 Source Code 🧪", url="https://github.com/levina-lab/VeezMusic"
-                    )
-                ]
+                        "Source code", url="https://github.com/levina-lab/VeezMusic")
+                ] 
             ]
         ),
      disable_web_page_preview=True
@@ -81,11 +73,8 @@ async def start(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "✨ Group", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "🌹 sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/chmongabut"
                     ),
-                    InlineKeyboardButton(
-                        "📣 Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
-                    )
                 ]
             ]
         )
@@ -156,14 +145,6 @@ async def help_(client: Client, message: Message):
 </b>""",
         reply_markup=InlineKeyboardMarkup(
             [
-                [
-                    InlineKeyboardButton(
-                        "✨ GROUP", url=f"https://t.me/{GROUP_SUPPORT}"
-                    ),
-                    InlineKeyboardButton(
-                        "📣 CHANNEL", url=f"https://t.me/{UPDATES_CHANNEL}"
-                    )
-                ],
                 [
                     InlineKeyboardButton(
                         "👩🏻‍💻 DEVELOPER", url=f"https://t.me/{OWNER_NAME}"
