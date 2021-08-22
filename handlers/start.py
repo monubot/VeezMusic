@@ -43,7 +43,7 @@ async def start_(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "📚 ᴄᴏᴍᴍᴀɴᴅs", url="https://telegra.ph/VEEZ-MUSIC-GUIDE-07-27")
+                        "➕ Add me to your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                 ],[
                     InlineKeyboardButton(
                         "☀️ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"), 
@@ -88,7 +88,7 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="❔ HOW TO USE ME", url=f"https://t.me/{BOT_USERNAME}?start=help"
+                        text="HOW TO USE ME ❔", url=f"https://t.me/{BOT_USERNAME}?start=help"
                     )
                 ]
             ]
