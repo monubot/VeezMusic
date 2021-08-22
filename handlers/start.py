@@ -7,12 +7,29 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from helpers.decorators import authorized_users_only
 
 
-
-@Client.on_message(
-    filters.command("start")
-    & filters.private
-    & ~ filters.edited
+START_TIME = datetime.utcnow()
+START_TIME_ISO = START_TIME.replace(microsecond=0).isoformat()
+TIME_DURATION_UNITS = (
+    ('week', 60 * 60 * 24 * 7),
+    ('day', 60 * 60 * 24),
+    ('hour', 60 * 60),
+    ('min', 60),
+    ('sec', 1)
 )
+
+async def _human_time_duration(seconds):
+    if seconds == 0:
+        return 'inf'
+    parts = []
+    for unit, div in TIME_DURATION_UNITS:
+        amount, seconds = divmod(int(seconds), div)
+        if amount > 0:
+            parts.append('{} {}{}'
+                         .format(amount, unit, "" if amount == 1 else "s"))
+    return ', '.join(parts)
+
+
+@Client.on_message(command("start") & filters.private & ~filters.edited)
 async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""<b>✨ Welcome {message.from_user.first_name} \n
@@ -26,18 +43,18 @@ async def start_(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "📚 Commands", url="https://telegra.ph/VEEZ-MUSIC-GUIDE-07-27")
+                        "📚 ᴄᴏᴍᴍᴀɴᴅs", url="https://telegra.ph/VEEZ-MUSIC-GUIDE-07-27")
                 ],[
                     InlineKeyboardButton(
                         "☀️ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"), 
                     InlineKeyboardButton(
-                        "✨ ɢʀᴏᴜᴘs", url=f"https://t.me/{SUPPORT_GROUP}")
+                        "✨ ɢʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}")
                 ],[
                     InlineKeyboardButton(
                         "⚡ ᴏᴡɴᴇʀ", url=f"https://t.me/mondisini")
                 ],[
                     InlineKeyboardButton(
-                        "Source code", url="https://github.com/levina-lab/VeezMusic")
+                        "sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url="https://github.com/levina-lab/VeezMusic")
                 ] 
             ]
         ),
