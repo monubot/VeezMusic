@@ -104,9 +104,9 @@ async def help_(client: Client, message: Message):
     await message.reply_text(
         f"""<b>Hello {message.from_user.mention()}, welcome to help menu ✨
 \n📙 HOW TO USE ME ?
-\n1. first add me to your group.
-2. promote me as admin and give all permission.
-3. then, add @{ASSISTANT_NAME} to your group or type /userbotjoin.
+\n1. First add me to your group.
+2. Promote me as admin and give all permission.
+3. Then, add @{ASSISTANT_NAME} to your group or type /userbotjoin.
 3. make sure you turn on the voice chat first before start playing music.
 \n💁🏻‍♀️ **commands for all user:**
 \n/play (song name) - play song from youtube
