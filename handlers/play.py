@@ -162,10 +162,10 @@ def r_ply(type_):
                 InlineKeyboardButton("⏭", "skip")
             ],
             [
-                InlineKeyboardButton("📖 PlayList", "playlist"),
+                InlineKeyboardButton("📖 ᴘʟᴀʏʟɪsᴛ", "playlist"),
             ],
             [       
-                InlineKeyboardButton("🗑 Close", "cls")
+                InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", "cls")
             ]        
         ]
     )
@@ -372,11 +372,11 @@ async def m_cb(b, cb):
                 
                 ],
                 [
-                    InlineKeyboardButton("📖 PlayList", "playlist"),
+                    InlineKeyboardButton("📖 ᴘʟᴀʏʟɪsᴛ", "playlist"),
                 
                 ],
                 [       
-                    InlineKeyboardButton("🗑 Close", "cls")
+                    InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", "cls")
                 ]        
             ]
         )
@@ -508,11 +508,10 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
-                    InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
-                ],[
-                    InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("📖 ᴘʟᴀʏʟɪsᴛ", callback_data="playlist"),
+                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/chmongabut"),
                 ],
+                [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="cls")],
             ]
         )
         file_name = get_file_name(audio)
@@ -555,11 +554,10 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
-                    InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
-                ],[
-                    InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("📖 ᴘʟᴀʏʟɪsᴛ", callback_data="playlist"),
+                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/chmongabut"),
                 ],
+                [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="cls")],
             ]
         )
         requested_by = message.from_user.first_name
@@ -601,7 +599,7 @@ async def play(_, message: Message):
                     [
                         InlineKeyboardButton("6️⃣", callback_data=f'plll 5|{query}|{user_id}'),
                     ],
-                    [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                    [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="cls")],
                 ]
             )
             await message.reply_photo(
@@ -639,11 +637,10 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
-                    InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
-                ],[
-                    InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("📖 ᴘʟᴀʏʟɪsᴛ", callback_data="playlist"),
+                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/chmongabut"),
                 ],
+                [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="cls")],
             ]
             )
             requested_by = message.from_user.first_name
@@ -738,11 +735,10 @@ async def lol_cb(b, cb):
     keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
-                    InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
-                ],[
-                    InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("📖 ᴘʟᴀʏʟɪsᴛ", callback_data="playlist"),
+                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/chmongabut"),
                 ],
+                [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="cls")],
             ]
     )
     requested_by = useer_name
