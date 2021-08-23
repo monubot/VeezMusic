@@ -18,16 +18,6 @@ async def chika(client, message):
         await message.reply_text("`Something went wrong LOL...`")
 
 
-@Client.on_message(command(["una", f"una@{BOT_USERNAME}"]))
-async def una(client, message):
-    try:
-        resp = requests.get("https://tede-api.herokuapp.com/api/una").json()
-        results = f"{resp['url']}"
-        return await client.send_video(message.chat.id, video=results)
-    except Exception:
-        await message.reply_text("`Something went wrong LOL...`")
-
-
 @Client.on_message(command(["truth", f"truth@{BOT_USERNAME}"]))
 async def truth(client, message):
     try:
