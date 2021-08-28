@@ -7,11 +7,10 @@ from pyrogram import Client
 from config import BOT_USERNAME
 from helpers.filters import command
 
-
 @Client.on_message(command(["chika", f"chika@{BOT_USERNAME}"]))
 async def chika(client, message):
     try:
-        resp = requests.get("https://tede-api.herokuapp.com/api/chika").json()
+        resp = requests.get("https://api-tede.herokuapp.com/api/chika").json()
         results = f"{resp['url']}"
         return await client.send_video(message.chat.id, video=results)
     except Exception:
@@ -21,7 +20,7 @@ async def chika(client, message):
 @Client.on_message(command(["truth", f"truth@{BOT_USERNAME}"]))
 async def truth(client, message):
     try:
-        resp = requests.get("https://tede-api.herokuapp.com/api/truth").json()
+        resp = requests.get("https://api-tede.herokuapp.com/api/truth").json()
         results = f"{resp['message']}"
         return await message.reply_text(results)
     except Exception:
@@ -31,7 +30,7 @@ async def truth(client, message):
 @Client.on_message(command(["dare", f"dare@{BOT_USERNAME}"]))
 async def dare(client, message):
     try:
-        resp = requests.get("https://tede-api.herokuapp.com/api/dare").json()
+        resp = requests.get("https://api-tede.herokuapp.com/api/dare").json()
         results = f"{resp['message']}"
         return await message.reply_text(results)
     except Exception:
@@ -46,7 +45,7 @@ async def lirik(_, message):
             return
         query = message.text.split(None, 1)[1]
         rep = await message.reply_text("🔎 **searching lyrics...**")
-        resp = requests.get(f"https://tede-api.herokuapp.com/api/lirik?l={query}").json()
+        resp = requests.get(f"https://api-tede.herokuapp.com/api/lirik?l={query}").json()
         result = f"{resp['data']}"
         await rep.edit(result)
     except Exception:
