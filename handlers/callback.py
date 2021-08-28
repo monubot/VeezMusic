@@ -60,16 +60,6 @@ async def cbhelp(_, query: CallbackQuery):
                         "📘 Admin Cmd", callback_data="cbadmin"
                     ),
                     InlineKeyboardButton(
-                        "📗 Sudo Cmd", callback_data="cbsudo"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "📙 Owner Cmd", callback_data="cbowner"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
                         "📔 Fun Cmd", callback_data="cbfun"
                     )
                 ],
@@ -372,16 +362,6 @@ async def cbhelps(_, query: CallbackQuery):
                     InlineKeyboardButton(
                         "📘 Admin Cmd", callback_data="cbadmin"
                     ),
-                    InlineKeyboardButton(
-                        "📗 Sudo Cmd", callback_data="cbsudo"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "📙 Owner Cmd", callback_data="cbowner"
-                    )
-                ],
-                [
                     InlineKeyboardButton(
                         "📔 Fun Cmd", callback_data="cbfun"
                     )
