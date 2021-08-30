@@ -1,25 +1,17 @@
 # Copyright (C) 2021 VeezMusicProject
 
-import traceback
-import asyncio
+
 from asyncio import QueueEmpty
 from config import que
 from pyrogram import Client, filters
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, Chat, CallbackQuery, ChatPermissions
+from pyrogram.types import Message
 
 from cache.admins import admins
 from helpers.channelmusic import get_chat_id
 from helpers.decorators import authorized_users_only, errors
-from handlers.play import cb_admin_check
 from helpers.filters import command, other_filters
 from callsmusic import callsmusic
 from callsmusic.queues import queues
-from config import LOG_CHANNEL, OWNER_ID, BOT_USERNAME, COMMAND_PREFIXES
-from helpers.database import db, dcmdb, Database
-from helpers.dbtools import handle_user_status, delcmd_is_on, delcmd_on, delcmd_off
-from helpers.helper_functions.admin_check import admin_check
-from helpers.helper_functions.extract_user import extract_user
-from helpers.helper_functions.string_handling import extract_time
 
 
 @Client.on_message(filters.command("reload"))
@@ -115,7 +107,7 @@ async def authenticate(client, message):
         new_admins = admins[message.chat.id]
         new_admins.append(message.reply_to_message.from_user.id)
         admins[message.chat.id] = new_admins
-        await message.reply("user authorized.")
+        await message.reply("🟢 user authorized.\n\nfrom now on, that's user can use the admin commands.")
     else:
         await message.reply("✅ user already authorized!")
 
@@ -131,39 +123,6 @@ async def deautenticate(client, message):
         new_admins = admins[message.chat.id]
         new_admins.remove(message.reply_to_message.from_user.id)
         admins[message.chat.id] = new_admins
-        await message.reply("user deauthorized")
+        await message.reply("🔴 user deauthorized.\n\nfrom now that's user can't use the admin commands.")
     else:
         await message.reply("✅ user already deauthorized!")
-
-@Client.on_message(command(["control", f"control@{BOT_USERNAME}", "p"]))
-@errors
-@authorized_users_only
-async def controlset(_, message: Message):
-    await message.reply_text(
-        "**💡 opened music player control menu!**\n\n**💭 you can control the music player just by pressing one of the buttons below**",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "⏸ pause", callback_data="cbpause"
-                    ),
-                    InlineKeyboardButton(
-                        "▶️ resume", callback_data="cbresume"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "⏩ skip", callback_data="cbskip"
-                    ),
-                    InlineKeyboardButton(
-                        "⏹ end", callback_data="cbend"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "🗑 Close", callback_data="close"
-                    )
-                ]
-            ]
-        )
-    )
