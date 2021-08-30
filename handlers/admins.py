@@ -126,3 +126,36 @@ async def deautenticate(client, message):
         await message.reply("user deauthorized")
     else:
         await message.reply("✅ user already deauthorized!")
+
+@Client.on_message(command(["control", f"control@{BOT_USERNAME}", "p"]))
+@errors
+@authorized_users_only
+async def controlset(_, message: Message):
+    await message.reply_text(
+        "**💡 opened music player control menu!**\n\n**💭 you can control the music player just by pressing one of the buttons below**",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "⏸ pause", callback_data="cbpause"
+                    ),
+                    InlineKeyboardButton(
+                        "▶️ resume", callback_data="cbresume"
+                    )
+                ],
+                [
+                    InlineKeyboardButton(
+                        "⏩ skip", callback_data="cbskip"
+                    ),
+                    InlineKeyboardButton(
+                        "⏹ end", callback_data="cbend"
+                    )
+                ],
+                [
+                    InlineKeyboardButton(
+                        "🗑 Close", callback_data="close"
+                    )
+                ]
+            ]
+        )
+    )
