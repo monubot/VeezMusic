@@ -118,7 +118,7 @@ async def help_(client: Client, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "📘 Admin Cmd", callback_data="cbadmin"
+                        "🏡 BACK TO HOME", callback_data="cbstart"
                     )
                 ]
             ]
