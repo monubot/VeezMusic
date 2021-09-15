@@ -42,32 +42,27 @@ async def cbstart(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbhelp"))
 async def cbhelp(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>💡 Hello there, welcome to the help menu !</b>
+        f"""<b>💡 ʜᴇʟʟᴏ, ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ !</b>
 
-**in this menu you can open several available command menus, in each command menu there is also a brief explanation of each command**
+**ɪɴ ᴛʜɪs ᴍᴇɴᴜ ʏᴏᴜ ᴄᴀɴ ᴏᴘᴇɴ sᴇᴠᴇʀᴀʟ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅ ᴍᴇɴᴜs, ɪɴ ᴇᴀᴄʜ ᴄᴏᴍᴍᴀɴᴅ ᴍᴇɴᴜ ᴛʜᴇʀᴇ ɪs ᴀʟsᴏ ᴀ ʙʀɪᴇꜰ ᴇxᴘʟᴀɴᴀᴛɪᴏɴ ᴏꜰ ᴇᴀᴄʜ ᴄᴏᴍᴍᴀɴᴅ**
 
-⚡ __Powered by {BOT_NAME} __""",
+⚡ __ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME} __""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "📚 Basic Cmd", callback_data="cbbasic"
+                        "📚 ʙᴀsɪᴄ ᴄᴍᴅ", callback_data="cbbasic"
                     ),
                     InlineKeyboardButton(
-                        "📕 Advanced Cmd", callback_data="cbadvanced"
+                        "📕 ᴀᴅᴠᴀɴᴄᴇᴅ ᴄᴍᴅ", callback_data="cbadvanced"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "📘 Admin Cmd", callback_data="cbadmin"
+                        "📘 ᴀᴅᴍɪɴ ᴄᴍᴅ", callback_data="cbadmin"
                     ),
                     InlineKeyboardButton(
-                        "📔 Fun Cmd", callback_data="cbfun"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "🛄 Group tools", callback_data="cbgtools"
+                        "📔 ꜰᴜɴ ᴄᴍᴅ", callback_data="cbfun"
                     )
                 ],
                 [
@@ -83,7 +78,7 @@ async def cbhelp(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbbasic"))
 async def cbbasic(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>🏮 here is the basic commands</b>
+        f"""<b>🏮 Here is the basic commands</b>
 
 🎧 [ GROUP VC CMD ]
 
@@ -124,7 +119,7 @@ async def cbbasic(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbadvanced"))
 async def cbadvanced(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>🏮 here is the advanced commands</b>
+        f"""<b>🏮 Here is the advanced commands</b>
 
 /start (in group) - see the bot alive status
 /reload - reload bot and refresh the admin list
@@ -148,7 +143,7 @@ async def cbadvanced(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbadmin"))
 async def cbadmin(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>🏮 here is the admin commands</b>
+        f"""<b>🏮 Here is the admin commands</b>
 
 /player - show the music playing status
 /pause - pause the music streaming
@@ -178,7 +173,7 @@ async def cbadmin(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbsudo"))
 async def cbsudo(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>🏮 here is the sudo commands</b>
+        f"""<b>🏮 Here is the sudo commands</b>
 
 /userbotleaveall - order the assistant to leave from all group
 /gcast - send a broadcast message trought the assistant
@@ -200,7 +195,7 @@ async def cbsudo(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbowner"))
 async def cbowner(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>🏮 here is the owner commands</b>
+        f"""<b>🏮 Here is the owner commands</b>
 
 /stats - show the bot statistic
 /broadcast - send a broadcast message from bot
@@ -226,7 +221,7 @@ async def cbowner(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbfun"))
 async def cbfun(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>🏮 here is the fun commands</b>
+        f"""<b>🏮 Here is the fun commands</b>
 
 /chika - check it by yourself
 /truth - check it by yourself
@@ -350,27 +345,27 @@ async def cbdelcmds(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbcmds"))
 async def cbhelps(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>💡 Hello there, welcome to the help menu !</b>
+        f"""<b>💡 ʜᴇʟʟᴏ, ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ !</b>
 
-**in this menu you can open several available command menus, in each command menu there is also a brief explanation of each command**
+**ɪɴ ᴛʜɪs ᴍᴇɴᴜ ʏᴏᴜ ᴄᴀɴ ᴏᴘᴇɴ sᴇᴠᴇʀᴀʟ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅ ᴍᴇɴᴜs, ɪɴ ᴇᴀᴄʜ ᴄᴏᴍᴍᴀɴᴅ ᴍᴇɴᴜ ᴛʜᴇʀᴇ ɪs ᴀʟsᴏ ᴀ ʙʀɪᴇꜰ ᴇxᴘʟᴀɴᴀᴛɪᴏɴ ᴏꜰ ᴇᴀᴄʜ ᴄᴏᴍᴍᴀɴᴅ**
 
-⚡ __Powered by {BOT_NAME} """,
+⚡ __ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME} __""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "📚 Basic Cmd", callback_data="cbbasic"
+                        "📚 ʙᴀsɪᴄ ᴄᴍᴅ", callback_data="cbbasic"
                     ),
                     InlineKeyboardButton(
-                        "📕 Advanced Cmd", callback_data="cbadvanced"
+                        "📕 ᴀᴅᴠᴀɴᴄᴇᴅ ᴄᴍᴅ", callback_data="cbadvanced"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "📘 Admin Cmd", callback_data="cbadmin"
+                        "📘 ᴀᴅᴍɪɴ ᴄᴍᴅ", callback_data="cbadmin"
                     ),
                     InlineKeyboardButton(
-                        "📔 Fun Cmd", callback_data="cbfun"
+                        "📔 ꜰᴜɴ ᴄᴍᴅ", callback_data="cbfun"
                     )
                 ],
                 [
