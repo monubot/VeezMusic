@@ -65,6 +65,11 @@ async def cbhelp(_, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(
+                        "🛄 Group tools", callback_data="cbgtools"
+                    )
+                ],
+                [
+                    InlineKeyboardButton(
                         "🏡 BACK TO HELP", callback_data="cbguide"
                     )
                 ]
