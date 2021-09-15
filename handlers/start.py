@@ -133,11 +133,12 @@ async def help_(client: Client, message: Message):
 @Client.on_message(command(["ping", f"ping@{BOT_USERNAME}"]) & ~filters.edited)
 async def ping_pong(client: Client, message: Message):
     start = time()
-    m_reply = await message.reply_text("pinging...")
+    m_reply = await message.reply_text("Moon Pinging...")
     delta_ping = time() - start
     await m_reply.edit_text(
-        "🏓 `MOON PONG!!`\n"
-        f"⚡️ `{delta_ping * 1000:.3f} ms`"
+        "🏓 `MOON MUSIC PONG!!`\n"
+        f"⚡️ `{delta_ping * 1000:.3f} ms`\n\n"
+        f"• **ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍᴏᴏɴ ᴍᴜsɪᴄ**"
     )
 
 
