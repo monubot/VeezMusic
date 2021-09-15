@@ -97,9 +97,9 @@ async def help(client: Client, message: Message):
 @Client.on_message(command(["help", f"help@{BOT_USERNAME}"]) & filters.private & ~filters.edited)
 async def help_(client: Client, message: Message):
     await message.reply_text(
-        f"""<b>💡 Hello {message.from_user.mention} welcome to the help menu !</b>
-**in this menu you can open several available command menus, in each command menu there is also a brief explanation of each command**
-⚡ __Powered by {BOT_NAME} __""",
+        f"""<b>💡 ʜᴇʟʟᴏ {message.from_user.mention} ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ !</b>
+**ɪɴ ᴛʜɪs ᴍᴇɴᴜ ʏᴏᴜ ᴄᴀɴ ᴏᴘᴇɴ sᴇᴠᴇʀᴀʟ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅ ᴍᴇɴᴜs, ɪɴ ᴇᴀᴄʜ ᴄᴏᴍᴍᴀɴᴅ ᴍᴇɴᴜ ᴛʜᴇʀᴇ ɪs ᴀʟsᴏ ᴀ ʙʀɪᴇꜰ ᴇxᴘʟᴀɴᴀᴛɪᴏɴ ᴏꜰ ᴇᴀᴄʜ ᴄᴏᴍᴍᴀɴᴅ**
+⚡ __ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME} __""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
