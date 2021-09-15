@@ -402,36 +402,3 @@ async def cbguides(_, query: CallbackQuery):
             ]
         )
     )
-
-@Client.on_callback_query(filters.regex("cbgtools"))
-@cb_admin_check
-@authorized_users_only
-async def cbgtools(_, query: CallbackQuery):
-    await query.edit_message_text(
-        f"""<b>this is the feature information :</b>
-💡 **Feature:** this feature contains functions that can ban, mute, unban, unmute users in your group.
-and you can also set a time for the ban and mute penalties for members in your group so that they can be released from the punishment with the specified time.
-
-❔ **usage:**
-1️⃣ ban & temporarily ban user from your group:
-   » type `/b username/reply to message` ban permanently
-   » type `/tb username/reply to message/duration` temporarily ban user
-   » type `/ub username/reply to message` to unban user
-
-2️⃣ mute & temporarily mute user in your group:
-   » type `/m username/reply to message` mute permanently
-   » type `/tm username/reply to message/duration` temporarily mute user
-   » type `/um username/reply to message` to unmute user
-📝 note: cmd /b, /tb and /ub is the function to banned/unbanned user from your group, whereas /m, /tm and /um are commands to mute/unmute user in your group.
-
-⚡ __Powered by {BOT_NAME} __""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "🏡 GO BACK", callback_data="cbback"
-                    )
-                ]
-            ]
-        )
-    )
