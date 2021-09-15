@@ -10,14 +10,14 @@ from handlers.play import cb_admin_check
 @Client.on_callback_query(filters.regex("cbstart"))
 async def cbstart(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>✨ Welcome {message.from_user.first_name} \n
-᪥ [{BOT_NAME}](https://t.me/{BOT_USERNAME}) allow you to play music on groups through the new Telegram's voice chat !
+        f"""<b>✨ **ᴡᴇʟᴄᴏᴍᴇ {message.from_user.first_name}** \n
+᪥ **[{BOT_NAME}](https://t.me/{BOT_USERNAME}) ᴀʟʟᴏᴡ ʏᴏᴜ ᴛᴏ ᴘʟᴀʏ ᴍᴜsɪᴄ ᴏɴ ɢʀᴏᴜᴘs ᴛʜʀᴏᴜɢʜ ᴛʜᴇ ɴᴇᴡ ᴛᴇʟᴇɢʀᴀᴍ's ᴠᴏɪᴄᴇ ᴄʜᴀᴛ !**
 
-᪥ Find out all the Bot's Commands and how they work by clicking on the » 📚 Commands button !
+᪥ **ꜰɪɴᴅ ᴏᴜᴛ ᴀʟʟ ᴛʜᴇ ʙᴏᴛ's ᴄᴏᴍᴍᴀɴᴅs ᴀɴᴅ ʜᴏᴡ ᴛʜᴇʏ ᴡᴏʀᴋ ʙʏ ᴄʟɪᴄᴋɪɴɢ ᴏɴ ᴛʜᴇ » 📚 ᴄᴏᴍᴍᴀɴᴅs ʙᴜᴛᴛᴏɴ !**
 
-᪥ For information about all feature of this bot, just type /help
+᪥ **ꜰᴏʀ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀʟʟ ꜰᴇᴀᴛᴜʀᴇ ᴏꜰ ᴛʜɪs ʙᴏᴛ, ᴊᴜsᴛ ᴛʏᴘᴇ /help**
 
-᪥ Created by [MOON](https://t.me/{OWNER_NAME})
+᪥ **ᴄʀᴇᴀᴛᴇᴅ ʙʏ [ᴍᴏᴏɴ](https://t.me/{OWNER_NAME})**
 <b>""",
         reply_markup=InlineKeyboardMarkup(
             [
