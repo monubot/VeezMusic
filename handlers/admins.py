@@ -15,6 +15,7 @@ from callsmusic.queues import queues
 
 
 @Client.on_message(filters.command("reload"))
+@authorized_users_only
 async def update_admin(client, message):
     global admins
     new_admins = []
@@ -127,102 +128,6 @@ async def deautenticate(client, message):
     else:
         await message.reply("✅ user already deauthorized!")
 
-
-@Client.on_message(command(["control", f"control@{BOT_USERNAME}"]) & other_filters)
-@errors
-@authorized_users_only
-async def controlset(_, message: Message):
-    await message.reply_text(
-        "**💡 opened music player control menu!**\n\n**💭 you can control the music player just by pressing one of the buttons below**",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "⏸ pause", callback_data="cbpause"
-                    ),
-                    InlineKeyboardButton(
-                        "▶️ resume", callback_data="cbresume"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "⏩ skip", callback_data="cbskip"
-                    ),
-                    InlineKeyboardButton(
-                        "⏹ end", callback_data="cbend"
-                    )
-                ]
-            ]
-        )
-    )
-
-
-@Client.on_callback_query(filters.regex("cbpause"))
-@cb_admin_check
-async def cbpause(_, query: CallbackQuery):
-    chat_id = get_chat_id(query.message.chat)
-    if (
-        query.message.chat.id not in callsmusic.pytgcalls.active_calls
-            ) or (
-                callsmusic.pytgcalls.active_calls[query.message.chat.id] == "paused"
-            ):
-        await query.edit_message_text("❗️ nothing is playing", reply_markup=BACK_BUTTON)
-    else:
-        callsmusic.pytgcalls.pause_stream(query.message.chat.id)
-        await query.edit_message_text("▶️ music is paused", reply_markup=BACK_BUTTON)
-
-@Client.on_callback_query(filters.regex("cbresume"))
-@cb_admin_check
-async def cbresume(_, query: CallbackQuery):
-    chat_id = get_chat_id(query.message.chat)
-    if (
-        query.message.chat.id not in callsmusic.pytgcalls.active_calls
-            ) or (
-                callsmusic.pytgcalls.active_calls[query.message.chat.id] == "resumed"
-            ):
-        await query.edit_message_text("❗️ nothing is paused", reply_markup=BACK_BUTTON)
-    else:
-        callsmusic.pytgcalls.resume_stream(query.message.chat.id)
-        await query.edit_message_text("⏸ music is resumed", reply_markup=BACK_BUTTON)
-
-@Client.on_callback_query(filters.regex("cbend"))
-@cb_admin_check
-async def cbend(_, query: CallbackQuery):
-    chat_id = get_chat_id(query.message.chat)
-    if query.message.chat.id not in callsmusic.pytgcalls.active_calls:
-        await query.edit_message_text("❗️ nothing is playing", reply_markup=BACK_BUTTON)
-    else:
-        try:
-            queues.clear(query.message.chat.id)
-        except QueueEmpty:
-            pass
-        
-        callsmusic.pytgcalls.leave_group_call(query.message.chat.id)
-        await query.edit_message_text("✅ the music queue has been cleared and successfully left voice chat", reply_markup=BACK_BUTTON)
-
-@Client.on_callback_query(filters.regex("cbskip"))
-@cb_admin_check
-async def cbskip(_, query: CallbackQuery):
-    global que
-    chat_id = get_chat_id(query.message.chat)
-    if query.message.chat.id not in callsmusic.pytgcalls.active_calls:
-        await query.edit_message_text("❗️ nothing is playing", reply_markup=BACK_BUTTON)
-    else:
-        queues.task_done(query.message.chat.id)
-        
-        if queues.is_empty(query.message.chat.id):
-            callsmusic.pytgcalls.leave_group_call(query.message.chat.id)
-        else:
-            callsmusic.pytgcalls.change_stream(
-                query.message.chat.id, queues.get(query.message.chat.id)["file"]
-            )
-            
-    qeue = que.get(chat_id)
-    if qeue:
-        skip = qeue.pop(0)
-    if not qeue:
-        return
-    await query.edit_message_text(f"⏭ skipped music\n\n» skipped : **{skip[0]}**\n» now playing : **{qeue[0][0]}**", reply_markup=BACK_BUTTON)
 
 # (C) Veez Music Project
 
