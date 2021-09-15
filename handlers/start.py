@@ -106,18 +106,18 @@ async def help_(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "📚 Basic Cmd", callback_data="cbbasic"
+                        "📚 ʙᴀsɪᴄ ᴄᴍᴅ", callback_data="cbbasic"
                     ),
                     InlineKeyboardButton(
-                        "📕 Advanced Cmd", callback_data="cbadvanced"
+                        "📕 ᴀᴅᴠᴀɴᴄᴇᴅ ᴄᴍᴅ", callback_data="cbadvanced"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "📘 Admin Cmd", callback_data="cbadmin"
+                        "📘 ᴀᴅᴍɪɴ ᴄᴍᴅ", callback_data="cbadmin"
                     ),
                     InlineKeyboardButton(
-                        "📔 Fun Cmd", callback_data="cbfun"
+                        "📔 ꜰᴜɴ ᴄᴍᴅ", callback_data="cbfun"
                     )
                 ],
                 [
