@@ -23,8 +23,18 @@ async def update_admin(client, message):
     for u in new_ads:
         new_admins.append(u.user.id)
     admins[message.chat.id] = new_admins
-    await message.reply_text("✅ Bot **reloaded correctly !**\n✅ **Admin list** has been **updated !**")
-
+    await message.reply_text(
+        f"""✅ Bot **reloaded correctly !**\n✅ **Admin list** has been **updated !**""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "🌹 sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{UPDATES_CHANNEL}"
+                    ),
+                ]
+            ]
+        )
+    )
 
 @Client.on_message(command("pause") & other_filters)
 @errors
@@ -94,7 +104,7 @@ async def skip(_, message: Message):
         skip = qeue.pop(0)
     if not qeue:
         return
-    await message.reply_text(f"⫸ skipped : **{skip[0]}**\n⫸ now playing : **{qeue[0][0]}**")
+    await message.reply_text(f"⫸ Skipped : **{skip[0]}**\n⫸ Now playing : **{qeue[0][0]}**")
 
 
 @Client.on_message(filters.command("auth"))
