@@ -4,8 +4,7 @@
 from asyncio import QueueEmpty
 from config import que
 from pyrogram import Client, filters
-from config import OWNER_NAME, UPDATES_CHANNEL
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from pyrogram.types import Message
 
 from cache.admins import admins
 from helpers.channelmusic import get_chat_id
