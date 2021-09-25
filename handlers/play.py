@@ -509,7 +509,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("📖 ᴘʟᴀʏʟɪsᴛ", callback_data="playlist"),
-                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/chmoonbot"),
+                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/gabutmoon"),
                 ],
                 [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="cls")],
             ]
@@ -555,7 +555,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("📖 ᴘʟᴀʏʟɪsᴛ", callback_data="playlist"),
-                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/chmoonbot"),
+                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/gabutmoon"),
                 ],
                 [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="cls")],
             ]
@@ -637,7 +637,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("📖 ᴘʟᴀʏʟɪsᴛ", callback_data="playlist"),
-                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/chmoonbot"),
+                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/gabutmoon"),
                 ],
                 [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="cls")],
             ]
@@ -656,8 +656,8 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption=f"💡 **Track added to the queue**\n\n🏷 **Name:** [{title[:45]}]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {message.from_user.mention}\n" \
-                   +f"\n🔢 **Track Position:** » `{position}` «",
+            caption=f"💡 **Track added to the queue**\n\n🏷 **Name :** [{title[:45]}]({url})\n⏱ **Duration :** `{duration}`\n🎧 **Request by :** {message.from_user.mention}\n" \
+                   +f"\n🔢 **Track Position :** » `{position}` «",
             reply_markup=keyboard
         )
     else:
@@ -676,8 +676,8 @@ async def play(_, message: Message):
             return
         await message.reply_photo(
             photo="final.png",
-            caption=f"🏷 **Name:** [{title[:45]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Playing`\n" \
-                   +f"🎧 **Request by:** {message.from_user.mention}",
+            caption=f"🏷 **Name :** [{title[:45]}]({url})\n⏱ **Duration :** `{duration}`\n💡 **Status :** `Playing`\n" \
+                   +f"🎧 **Request by :** {message.from_user.mention}",
             reply_markup=keyboard
         )
         os.remove("final.png")
@@ -735,7 +735,7 @@ async def lol_cb(b, cb):
             [
                 [
                     InlineKeyboardButton("📖 ᴘʟᴀʏʟɪsᴛ", callback_data="playlist"),
-                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/chmoonbot"),
+                    InlineKeyboardButton("🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/gabutmoon"),
                 ],
                 [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="cls")],
             ]
@@ -758,8 +758,8 @@ async def lol_cb(b, cb):
         await b.send_photo(
         chat_id,
         photo="final.png",
-        caption=f"💡 **Track added to the queue**\n\n🏷 **Name:** [{title[:45]}]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {r_by.mention}\n" \
-               +f"\n🔢 **Track Position:** » `{position}` «",
+        caption=f"💡 **Track added to the queue**\n\n🏷 **Name :** [{title[:45]}]({url})\n⏱ **Duration :** `{duration}`\n🎧 **Request by :** {r_by.mention}\n" \
+               +f"\n🔢 **Track Position :** » `{position}` «",
         reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -779,8 +779,8 @@ async def lol_cb(b, cb):
         await b.send_photo(
         chat_id,
         photo="final.png",
-        caption=f"🏷 **Name:** [{title[:45]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Playing`\n" \
-               +f"🎧 **Request by:** {r_by.mention}",
+        caption=f"🏷 **Name :** [{title[:45]}]({url})\n⏱ **Duration :** `{duration}`\n💡 **Status :** `Playing`\n" \
+               +f"🎧 **Request by :** {r_by.mention}",
         reply_markup=keyboard,
         )
         os.remove("final.png")
