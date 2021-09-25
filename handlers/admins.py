@@ -25,17 +25,7 @@ async def update_admin(client, message):
     admins[message.chat.id] = new_admins
     await message.reply_text(
         f"""✅ Bot **reloaded correctly !**\n✅ **Admin list updated !**""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "🌹 sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{UPDATES_CHANNEL}"
-                    ),
-                ]
-            ]
-        )
-    )
-
+        
 
 @Client.on_message(command("pause") & other_filters)
 @errors
