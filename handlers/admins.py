@@ -35,10 +35,10 @@ async def pause(_, message: Message):
     if (chat_id not in callsmusic.pytgcalls.active_calls) or (
         callsmusic.pytgcalls.active_calls[chat_id] == "paused"
     ):
-        await message.reply_text("❗ nothing in streaming!")
+        await message.reply_text("❌ no music is playing.")
     else:
         callsmusic.pytgcalls.pause_stream(chat_id)
-        await message.reply_text("▶️ music paused!")
+        await message.reply_text("⏸ **Track paused.**\n\n• **To resume the playback, use the** » `/resume` command.")
 
 
 @Client.on_message(command("resume") & other_filters)
@@ -49,10 +49,10 @@ async def resume(_, message: Message):
     if (chat_id not in callsmusic.pytgcalls.active_calls) or (
         callsmusic.pytgcalls.active_calls[chat_id] == "playing"
     ):
-        await message.reply_text("❗ nothing is paused!")
+        await message.reply_text("❌ no music is paused.")
     else:
         callsmusic.pytgcalls.resume_stream(chat_id)
-        await message.reply_text("⏸ music resumed!")
+        await message.reply_text("▶️ **Track resumed.**\n\n• **To pause the playback, use the** » `/pause` command.")
 
 
 @Client.on_message(command("end") & other_filters)
