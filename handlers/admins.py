@@ -24,7 +24,7 @@ async def update_admin(client, message):
         new_admins.append(u.user.id)
     admins[message.chat.id] = new_admins
     await message.reply_text(
-        f"""✅ Bot **reloaded correctly !**\n✅ **Admin list updated !**""",)
+        f"""✅ Bot **reloaded correctly !**\n✅ **Admin list updated !**""")
         
 
 @Client.on_message(command("pause") & other_filters)
